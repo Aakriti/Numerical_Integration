@@ -1,0 +1,15 @@
+gcc stability_rk1.c -lm -o rk1.out
+./rk1.out >rk1.dat
+
+gcc stability_rk2.c -lm -o rk2.out
+./rk2.out >rk2.dat
+
+gcc stability_rk3.c -lm -o rk3.out
+./rk3.out >rk3.dat
+
+gcc stability_rk4.c -lm -o rk4.out
+./rk4.out >rk4.dat
+
+rm rk1.out rk2.out rk3.out rk4.out
+
+octave -q myplot1.m rk1.dat rk2.dat rk3.dat rk4.dat
